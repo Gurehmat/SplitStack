@@ -3,9 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./script.js"></script>
     <title>SplitStack</title>
 </head>
 <body>
-    s
+    <header>
+        <h1>splitstack</h1>
+    </header>
+
+    <main>
+        <section id="add-person">
+            <form onsubmit="addPerson(); return false;">
+                <label for="pname">Person-Name:</label>
+
+                <input type="text" id="person-name" placeholder="Enter name" />
+
+                <button onclick="addPerson()">Add</button>
+                
+            </form>
+            
+        </section>
+
+        <section id="add-expense">
+            <h2>Add Expense</h2>
+            <input type="text" id="expense-desc" placeholder="What was bought?" />
+            <input type="number" id="amount" placeholder="Amount" />
+  
+            <select id="paid-by">
+    <!-- options filled dynamically from people[] -->
+            </select>
+
+             <select id="split-between" multiple>
+    <!-- options filled dynamically from people[] -->
+            </select>
+
+                <button onclick="addExpense()">Add Expense</button>
+        </section>
+
+        <section id="expenses-list">...
+        </section>
+        <section id="summary">...</section>
+    </main>
 </body>
 </html>
