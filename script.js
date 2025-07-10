@@ -1,8 +1,16 @@
 let people = [];
 
 function addPerson() {
+
+    if (!name) return;
     console.log("addPerson() triggered");
-    let name = document.getElementById("person-name").value;
+    let name = document.getElementById("person-name").value.trim();
+
+    if (people.includes(name.toLowerCase())) {
+        console.log("Person already exists in the list.");
+        return;
+    }    
+
     if (name) {
         people.push(name);
         addpersontolist();
@@ -35,6 +43,7 @@ function addpersontolist() {
         
         payers.appendChild(opt);
         splitters.appendChild(opt.cloneNode(true));
-    }
+    } 
 
+    
 }
